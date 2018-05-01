@@ -34,14 +34,16 @@
             <div class="title">Navigation</div>
             <ul>
               <!-- <li> <i class="fa fa-home"></i>Home</li> -->
-              <li>
-                <a href="tasks.html">
-                  <i class="fa fa-tasks"></i>Tasks</a>
-              </li>
-              <li class="active">
-                <a href="logs.html">
-                  <i class="fa fa-signal"></i>Work Logs</a>
-              </li>
+              <a href="tasks.html">
+                <li>
+                  <i class="fa fa-tasks"></i>Tasks
+                </li>
+              </a>
+              <a href="logs.html" class="active">
+                <li class="active">
+                  <i class="fa fa-signal"></i>Work Logs
+                </li>
+              </a>
             </ul>
           </div>
 
@@ -52,7 +54,7 @@
           <div class="viewHeader">
             <div class="title">Work Logs</div>
             <div class="functions">
-              <div class="button active" onclick="addButton()">Add New Task</div>
+              <div class="button active" onclick="addButton()">New Log</div>
               <div class="button">Completed</div>
               <div class="button inverz"><i class="fa fa-trash-o"></i></div>
             </div>
@@ -70,9 +72,9 @@
                 <div id="finished-task">
                 </div>
               </ul>
-              <div class="add-btn-form">
+              <!-- <div class="add-btn-form">
                 <input type="image" src="pics/plus.svg" class="add-btn" onclick="addButton()">
-              </div>
+              </div> -->
               
             </div>
           </div>
@@ -96,7 +98,7 @@
               </div>
         
               <div class="in-block-input-dep">
-                <span id="location">Location</span>
+                <span id="department">Department</span>
                 <br>
                 <select id="select">
                   <option value=""></option>
@@ -114,9 +116,9 @@
               <br>
               <textarea rows="10" cols="50" id="description"></textarea>
             </div>
-            <div class="urgent-form">
+            <!-- <div class="urgent-form">
               <input type="checkbox" name="urgent" checked="false" id="urgent-btn" /> Urgent
-            </div>
+            </div> -->
             <br>
             <input type="submit" id="form-submit" onclick="addTask (); return false;" />
           </form>

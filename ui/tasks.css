@@ -142,7 +142,7 @@ a {
   transition: 0.25s all;
 }
 .main .nav .menu ul li.active {
-  color: #79bc46;
+  background-color: #79bc46;
 }
 .main .nav .menu ul li:hover {
   background-color: #999;
