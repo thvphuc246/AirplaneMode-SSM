@@ -1,0 +1,49 @@
+DROP DATABASE IF EXISTS elektroasennus;
+CREATE DATABASE elektroasennus;
+USE elektroasennus;
+
+CREATE TABLE clients(
+	ClientID int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	ClientName varchar(255) NOT NULL,
+	BillingAddress varchar(255) NOT NULL,
+	PostalCode varchar(255),
+	ClientAddress varchar(255)
+);
+
+CREATE TABLE locations(
+	LocID int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	ClientID int FOREIGN KEY REFERENCES clients(ClientID),
+	LocName varchar(255),
+	LocStreetAddress varchar(255),
+	LocCity varchar(255)
+);
+
+CREATE TABLE tasks(
+	TaskID int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	LocID int NOT NULL FOREIGN KEY REFERENCES locations(LocID),
+	TaskName varchar(255) NOT NULL,
+	TaskDescription TEXT,
+	StartDate DATE() NOT NULL,
+	EndDate DATE(),
+	Status BOOL,
+);
+
+CREATE TABLE work_logs(
+	WorkLogID int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	TaskID int FOREIGN KEY REFERENCES tasks(TaskID),
+	EmployeeID int NOT NUL FOREIGN KEY REFERENCES employees(EmployeeID),
+	Date DATE() NOT NULL,
+	Hours float NOT NULL,
+	WorkDescription TEXT,
+	Additional_info TEXT,
+	Kilometres float,
+	Parking float
+);
+
+CREATE TABLE employees(
+	EmployeeID int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	FirstName varchar(255) NOT NULL,
+	LastName varchar(255) NOT NULL,
+	Contact varchar(255)
+);
+
