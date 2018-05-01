@@ -10,9 +10,14 @@ html {
 body {
   padding: 0px;
   margin: 0px;
-  font-family: "Open Sans";
-  font-size: 14px;
+  font-family: "Roboto";
+  font-size: 18px;
   font-smoothing: antialiased;
+}
+
+a {
+    color: #0060B6;
+    text-decoration: none;
 }
 
 .page {
@@ -62,7 +67,7 @@ body {
   float: right;
   line-height: 40px;
   padding: 0px 20px;
-  font-weight: 600;
+  font-weight: 900;
   font-size: 1em;
 }
 .pageHeader .userPanel img {
@@ -240,7 +245,7 @@ body {
 }
 .main .view .content .list ul li span {
   float: left;
-  font-weight: 600;
+  font-weight: 300;
 }
 .main .view .content .list ul li .info {
   float: right;
@@ -269,4 +274,144 @@ body {
 
 .clear {
   clear: both;
+}
+
+#task-list {
+    position: relative;
+    height: 93%;
+    -webkit-box-shadow: -0.063em 0.125em 1.188em 0.188em rgba(0,0,0,0.75);
+    -moz-box-shadow: -0.063em 0.125em 1.188em 0.188em rgba(0,0,0,0.75);
+    box-shadow: -0.063em 0.125em 1.188em 0.188em rgba(0,0,0,0.75);
+}
+
+#list, #new-list, #cplt-list, #cancel-list, #in-process-list {
+    overflow: auto;
+    height: 31.488em;
+    padding: 1em;
+    width: 93%;
+    margin: auto;
+}
+
+#waiting-task {
+    z-index: 1;
+}
+
+#finished-task{
+    z-index: 0;
+}
+
+.add-btn{
+    height: 5em;
+    width: 5em; 
+}
+
+.add-btn-form{
+    position: absolute;
+    top: 85%;
+    right: 2%;
+}
+
+#hidden-add-form{
+    width: 23em;
+    height: 27em;
+    position: absolute;
+    padding: 1.25em;
+    visibility: hidden;
+    position:absolute;
+    top: 38%;
+    left: 55%;
+    margin-top: -12.5em; /*set to a negative number 1/2 of your height*/
+    margin-left: -12.5em; /*set to a negative number 1/2 of your width*/
+    border: 1px solid #ccc;
+    background-color: #f3f3f3;
+}
+
+#form-header, #cancel{
+  display: inline;
+}
+
+#cancel {
+  cursor: pointer;
+  float: right;
+  font-size: 1.25em;
+  font-weight: 700;
+}
+
+.same-line-input{
+    position: relative;
+    margin-top: 0.75em;
+    width: 23em;
+    height: 3em;
+}
+
+.in-block-input-dep{
+    display: inline;
+    float: right;
+}
+
+.in-block-input-pl{
+    display: inline;
+    float: left;
+}
+
+.descp-form {
+    height: 11.2em;
+}
+
+#description{
+    margin-top: 0.5em;
+}
+
+#form-submit {
+    height: 2.8em;
+    width: 5em;
+    position: absolute;
+    right: 1em;
+    bottom: 1.5em
+}
+
+#select{
+    width: 10em;
+}
+
+.urgent-form {
+    margin: 0.25em 0; 
+}
+
+.task-list-btn-cross {
+    position: absolute;
+    top: 1em;
+    right: 3.625em;
+    background-color: #009f45;
+    color: #fff;
+    border-radius: 50%;
+}
+
+.task-list-btn-check {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    background-color: #fe0084;
+    color: #fff;
+    border-radius: 50%;
+}
+
+.done-btn {
+    text-transform: uppercase;
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    height: 2.8em;
+    width: 7em;
+    background-color: #009f45;
+    color: #fff;
+}
+
+.task-image {
+    height: 12em;
+    width: 10em;
+}
+
+.disabled{
+    display: none;
 }

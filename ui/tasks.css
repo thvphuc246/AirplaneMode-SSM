@@ -15,6 +15,11 @@ body {
   font-smoothing: antialiased;
 }
 
+a {
+    color: #0060B6;
+    text-decoration: none;
+}
+
 .page {
   position: absolute;
   width: 80%;
@@ -62,7 +67,7 @@ body {
   float: right;
   line-height: 40px;
   padding: 0px 20px;
-  font-weight: 900;
+  font-weight: 600;
   font-size: 1em;
 }
 .pageHeader .userPanel img {
@@ -240,7 +245,7 @@ body {
 }
 .main .view .content .list ul li span {
   float: left;
-  font-weight: 300;
+  font-weight: 600;
 }
 .main .view .content .list ul li .info {
   float: right;
