@@ -272,6 +272,69 @@ a {
   background-color: #85c157;
 }
 
+#hidden-add-form{
+    width: 23em;
+    height: 27em;
+    position: absolute;
+    padding: 1.25em;
+    visibility: hidden;
+    position:absolute;
+    top: 38%;
+    left: 55%;
+    margin-top: -12.5em; /*set to a negative number 1/2 of your height*/
+    margin-left: -12.5em; /*set to a negative number 1/2 of your width*/
+    border: 1px solid #ccc;
+    background-color: #f3f3f3;
+}
+
+#form-header, #cancel{
+  display: inline;
+}
+
+#cancel {
+  cursor: pointer;
+  float: right;
+  font-size: 1.25em;
+  font-weight: 700;
+}
+
+.same-line-input{
+    position: relative;
+    margin-top: 0.75em;
+    width: 23em;
+    height: 3em;
+}
+
+.in-block-input-dep{
+    display: inline;
+    float: right;
+}
+
+.in-block-input-pl{
+    display: inline;
+    float: left;
+}
+
+.descp-form {
+    height: 11.2em;
+}
+
+#description{
+    margin-top: 0.5em;
+}
+
+#form-submit {
+    height: 2.8em;
+    width: 5em;
+    position: absolute;
+    right: 1em;
+    bottom: 1.5em
+}
+
+#select{
+    width: 10em;
+}
+
 .clear {
   clear: both;
 }

@@ -84,23 +84,30 @@
         <div id="hidden-add-form">
         
           <form id="my-form">
-            <h2 id="form-header">Add New Task</h2>
+            <h2 id="form-header">Add New Log</h2>
             <button id="cancel" onclick="cancelButton(); return false;">X</button>
-            <br>Name<br>
-            <input type="text" id="task-name" placeholder="Task Name" required />
+            <h3></h3>
+            <br>User Name<br>
+            <input type="text" id="task-name" placeholder="Last Name, First Name" required />
             <br>
             <div class="same-line-input">
         
               <div class="in-block-input-pl">
-                <span id="place">Place</span>
+                <span id="task-project"> Project </span>
                 <br>
-                <input type="text" id="task-place" />
+                <select id="select-project">
+                  <option value = ""></option>
+                  <option value="Streaming Service">Streaming Service</option> 
+                  <option value="Online Banking">Online Banking</option> 
+                  <option value="Block Chain">Block Chain</option> 
+                  <option value="All">All</option> 
+                </select>
               </div>
         
               <div class="in-block-input-dep">
                 <span id="department">Department</span>
                 <br>
-                <select id="select">
+                <select id="select-department">
                   <option value=""></option>
                   <option value="Leppävaara">Leppävaara</option>
                   <option value="Espookeskus">Espookeskus</option>

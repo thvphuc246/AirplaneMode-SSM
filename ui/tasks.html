@@ -42,15 +42,17 @@
             </ul>
           </div>
         </div>
+
         <div class="view">
           <div class="viewHeader">
             <div class="title">Manage Tasks</div>
             <div class="functions">
-              <div class="button active">New Task</div>
+              <div class="button active" onclick="addButton()">New Task</div>
               <div class="button">Completed</div>
               <div class="button inverz"><i class="fa fa-trash-o"></i></div>
             </div>
           </div>
+
           <div class="content">
             <div class="list">
               <div class="title">COMPANY A</div>
@@ -88,10 +90,62 @@
             </div>
           </div>
         </div>
+
+        <div id="hidden-add-form">
+        
+          <form id="my-form">
+            <h2 id="form-header">Add New Task</h2>
+            <button id="cancel" onclick="cancelButton(); return false;">X</button>
+            <h3></h3>
+            <br>User Name<br>
+            <input type="text" id="task-name" placeholder="Last Name, First Name" required />
+            <br>
+            <div class="same-line-input">
+        
+              <div class="in-block-input-pl">
+                <span id="task-project"> Project </span>
+                <br>
+                <select id="select-project">
+                  <option value = ""></option>
+                  <option value="Streaming Service">Streaming Service</option> 
+                  <option value="Online Banking">Online Banking</option> 
+                  <option value="Block Chain">Block Chain</option> 
+                  <option value="All">All</option> 
+                </select>
+              </div>
+        
+              <div class="in-block-input-dep">
+                <span id="department">Department</span>
+                <br>
+                <select id="select-department">
+                  <option value=""></option>
+                  <option value="Leppävaara">Leppävaara</option>
+                  <option value="Espookeskus">Espookeskus</option>
+                  <option value="Myyrmänni">Myyrmänni</option>
+                  <option value="Kamppi">Kamppi</option>
+                  <option value="All">All</option>
+                </select>
+              </div>
+        
+            </div>
+            <div class="descp-form">
+              Description
+              <br>
+              <textarea rows="10" cols="50" id="description"></textarea>
+            </div>
+            <!-- <div class="urgent-form">
+              <input type="checkbox" name="urgent" checked="false" id="urgent-btn" /> Urgent
+            </div> -->
+            <br>
+            <input type="submit" id="form-submit" onclick="addTask (); return false;" />
+          </form>
+        
+        </div>	
+
       </div>
     </div>
 
-    <script type="text/javascript" src="tasks.css"></script>
+    <script type="text/javascript" src="tasks.js"></script>
 
   </body>
 
