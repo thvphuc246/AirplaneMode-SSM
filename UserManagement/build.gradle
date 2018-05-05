@@ -1,0 +1,66 @@
+buildscript {
+    ext {
+        springBootVersion = '2.0.1.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'application'
+apply plugin: 'war'
+
+mainClassName = 'com.rangigo.UserManagement.UserManagementApplication'
+group = 'com.rangigo'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    compile('org.springframework.boot:spring-boot-starter-security')
+    compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile 'com.github.jsimone:webapp-runner:8.5.30.0'
+    compile('javax.xml.bind:jaxb-api:2.3.0')
+    runtime('mysql:mysql-connector-java')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    testCompile('org.springframework.security:spring-security-test')
+}
+
+war {
+    enabled = true
+}
+
+jar {
+    enabled = true
+}
+
+task copyToLib(type: Copy) {
+    into "$buildDir/server"
+    from(configurations.compile) {
+        include "webapp-runner*"
+        rename { String fileName -> 		//Forget the version # from filename
+            "webapp-runner.jar"
+        }
+    }
+    println 'done!'
+    logger.lifecycle "war.archivePath = $war.archivePath"
+}
+
+task stage() {
+    dependsOn clean, war, copyToLib
+}
+
+war.mustRunAfter clean
